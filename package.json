@@ -8,15 +8,13 @@
     "x-ray": "^2.0.3"
   },
   "devDependencies": {
-    "coffee-script": "^1.10.0",
     "electron-livereload": "0.0.2",
     "electron-packager": "^5.1.0",
     "electron-prebuilt": "^0.36.0",
     "grunt": "^0.4.5",
-    "grunt-contrib-coffee": "^1.0.0",
     "grunt-contrib-watch": "^1.0.0",
     "grunt-electron": "^2.0.1",
     "load-grunt-tasks": "^3.4.1"
   },
-  "main": "dist/server/main.js"
+  "main": "src/server/main.js"
 }
