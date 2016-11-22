@@ -12,9 +12,9 @@ var mb = menubar({
   icon: 'build/trayIcon.png'
 });
 
-mb.on('ready', function() {
-  mb.window.openDevTools();
-});
+// mb.on('ready', function() {
+//   mb.window.openDevTools();
+// });
 
 var fetchCaps = function(callback) {
   var url = 'http://www.incicaps.com';
