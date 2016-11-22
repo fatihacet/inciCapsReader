@@ -66,4 +66,7 @@ ipc.on('RefreshCaps', function(e) {
   callCount = 0;
 
   fetchCaps(e, 'CapsRefreshed');
+
+  index = 20;
+  callCount = 1;
 });
