@@ -8,8 +8,7 @@ var index = 0;
 var mb = menubar({
   width: 570,
   height: 800,
-  preloadWindow: true,
-  icon: 'build/trayIcon.png'
+  preloadWindow: true
 });
 
 // mb.on('ready', function() {
