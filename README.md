@@ -1,13 +1,23 @@
-## CapsTray
+## InciCaps app
 
-Incicaps tray app.
+Electron tray app for [incicaps.com](http://incicaps.com) which is Turkish version of 9gag.com.
 
-![http://f.acet.me/LtRJ.png](http://f.acet.me/LtRJ.png)
 
-#### Installation
+#### Screencast
+
+Gif is 2.5Mb so it may take some time to load.
+
+![http://f.acet.me/sFf7.gif](http://f.acet.me/sFf7.gif)
+
+
+#### Development
 
 ```
 - npm install
 - grunt
 ```
 
+#### Creating packages
+
+- `node_modules/.bin/build --win --mac`
+- Packages will be in `dist` folder.
