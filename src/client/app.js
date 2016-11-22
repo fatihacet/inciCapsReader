@@ -1,4 +1,4 @@
-var ipc = require('ipc');
+var ipc = window.require('electron').ipcRenderer;
 
 window.addEventListener('load', function() {
   ipc.send('CapsRequested');
@@ -17,8 +17,7 @@ window.addEventListener('load', function() {
   });
 
   ipc.on('CapsFetched', function(err, capsList) {
-    var items = vue.capsList.concat(capsList);
-    vue.capsList = items;
+    vue.capsList = vue.capsList.concat(capsList);
     vue.isLoading = false;
   });
 });

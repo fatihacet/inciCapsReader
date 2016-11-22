@@ -1,6 +1,7 @@
 var menubar = require('menubar');
-var ipc = require('ipc');
+var ipc = require('electron').ipcMain;
 var xray = require('x-ray')();
+
 var callCount = 0;
 var index = 0;
 
@@ -49,7 +50,7 @@ ipc.on('CapsRequested', function(e, data) {
 
       return caps;
     });
-    e.sender.send('CapsFetched', err, capsList);
+    e.sender.send('CapsFetched', capsList);
   });
 
   index = (callCount + 1) * 5 + 15;
