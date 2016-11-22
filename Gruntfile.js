@@ -13,20 +13,18 @@ module.exports = function(grunt) {
         tasks: ['restart-electron']
       }
     }
-  },
+  });
 
   grunt.registerTask('default', function() {
     electron.start();
     return grunt.task.run('watch');
-  }),
+  });
 
   grunt.registerTask('restart-electron', function() {
     return electron.restart();
-  }),
+  });
 
   grunt.registerTask('reload-electron', function() {
     return electron.reload();
-  })
-
-  );
+  });
 };
