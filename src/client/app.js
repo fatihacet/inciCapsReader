@@ -2,26 +2,23 @@ var ipc = require('ipc');
 
 window.addEventListener('load', function() {
   ipc.send('CapsRequested');
+
   var vue = new Vue({
-    el: '#container',
+    el: '#wall',
     data: {
-      capsList: []
+      capsList: [],
+      isLoading: true
+    },
+    methods: {
+      loadMore: function() {
+        ipc.send('CapsRequested');
+      }
     }
   });
 
   ipc.on('CapsFetched', function(err, capsList) {
-    list = capsList.map(function(caps) {
-      return {
-        title: caps.title,
-        caps: caps.caps,
-        src: caps.src,
-        desc: caps.desc,
-        video: caps.video,
-        poster: caps.poster
-      };
-    });
-
-    console.log(list);
-    vue.capsList = list;
+    var items = vue.capsList.concat(capsList);
+    vue.capsList = items;
+    vue.isLoading = false;
   });
 });

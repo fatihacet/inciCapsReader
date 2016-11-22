@@ -3,16 +3,27 @@
 <head>
   <title>CapsTray</title>
   <meta charset="utf-8" />
-  <script type="text/javascript" src="src/client/lib/vue.min.js"></script>
-  <script type="text/javascript" src="src/client/app.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
+  <link href="src/client/main.css" rel="stylesheet">
+  <script src="src/client/lib/vue.min.js"></script>
+  <script src="src/client/app.js"></script>
 </head>
 <body>
-  <div id="container">
+  <div id="wall">
+    <img class="loading" src="http://www.incicaps.com/res/yeni/images/yeni_load.gif" v-if="isLoading" />
+
     <div class="caps" v-for="caps in capsList">
-      <h4>{{caps.title}}</h4>
-      <img :src="caps.src || caps.caps" />
-      <p>{{caps.desc || ''}}</p>
+      <div class="header">
+        <img :src="caps.author.avatar" />
+        <p v-html="caps.author.nick"></p>
+      </div>
+      <div class="content">
+        <h4>{{caps.title}}</h4>
+        <img :src="caps.src || caps.caps" />
+        <p>{{caps.desc || ''}}</p>
+      </div>
     </div>
+    <button class="load-more" @click="loadMore" v-if="!isLoading">Devamini Getir</button>
   </div>
 </body>
 </html>
