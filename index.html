@@ -10,6 +10,11 @@
 </head>
 <body>
   <div id="wall">
+    <div class="navbar">
+      <img src="http://www.incicaps.com/res/yeni/images/logo.png" />
+      <button class="refresh" @click="refresh" v-if="!isLoading">Yenile</button>
+    </div>
+
     <img class="loading" src="http://www.incicaps.com/res/yeni/images/yeni_load.gif" v-if="isLoading" />
 
     <div class="caps" v-for="caps in capsList">
@@ -23,6 +28,7 @@
         <p>{{caps.desc || ''}}</p>
       </div>
     </div>
+
     <button class="load-more" @click="loadMore" v-if="!isLoading">Devamini Getir</button>
   </div>
 </body>

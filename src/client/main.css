@@ -68,10 +68,40 @@ p, h4 {
   outline: none;
 }
 
-
 .loading {
   width: 36px;
   position: relative;
   left: 50%;
   margin: 40px -18px;
+}
+
+.navbar {
+  padding: 0 10px;
+  height: 52px;
+  background-color: #DE1640;
+  border-bottom: 1px solid #e5e5e5;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  position: relative;
+}
+
+.navbar img {
+  position: relative;
+  top: 5px;
+}
+
+.navbar button {
+  position: absolute;
+  right: 10px;
+  height: 40px;
+  line-height: 40px;
+  background-color: #4e4e4e;
+  color: #fff;
+  font-size: 13px;
+  border-radius: 5px;
+  border: none;
+  padding: 0 10px;
+  outline: none;
+  cursor: pointer;
+  top: 5px;
 }

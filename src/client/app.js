@@ -12,6 +12,10 @@ window.addEventListener('load', function() {
     methods: {
       loadMore: function() {
         ipc.send('CapsRequested');
+      },
+      refresh: function() {
+        vue.isLoading = true;
+        ipc.send('RefreshCaps');
       }
     }
   });
@@ -20,4 +24,10 @@ window.addEventListener('load', function() {
     vue.capsList = vue.capsList.concat(capsList);
     vue.isLoading = false;
   });
+
+  ipc.on('CapsRefreshed', function(err, capsList) {
+    vue.capsList = capsList;
+    vue.isLoading = false;
+  });
+
 });
