@@ -1,13 +1,27 @@
 {
-  "name": "capsTray",
+  "name": "inciCapsReader",
   "version": "0.0.1",
-  "description": "incicaps client",
+  "description": "InciCaps client",
   "author": "Fatih Acet <acetfatih@gmail.com>",
+  "main": "src/server/main.js",
+  "build": {
+    "appId": "incicaps.reader",
+    "mac": {
+      "category": "public.app-category.entertainment"
+    }
+  },
+  "scripts": {
+    "postinstall": "install-app-deps",
+    "pack": "build --dir",
+    "dist": "build"
+  },
   "dependencies": {
     "menubar": "^4.0.2",
     "x-ray": "^2.0.3"
   },
   "devDependencies": {
+    "electron-builder": "^8.6.0",
+    "electron-prebuilt": "^0.36.12",
     "electron-livereload": "0.0.2",
     "electron-packager": "^5.1.0",
     "electron-prebuilt": "^0.36.0",
@@ -15,6 +29,5 @@
     "grunt-contrib-watch": "^1.0.0",
     "grunt-electron": "^2.0.1",
     "load-grunt-tasks": "^3.4.1"
-  },
-  "main": "src/server/main.js"
+  }
 }
